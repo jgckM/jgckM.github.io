@@ -1,0 +1,8 @@
+# jgckm robots.txt
+User-agent: *
+Allow: /
+
+
+
+Sitemap: https://jgckm.github.io/sitemap.xml
+Sitemap: https://jgckm.github.io/baidusitemap.xml

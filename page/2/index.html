@@ -14,7 +14,7 @@ gtag('js', new Date());
 gtag('config', 'G-9EGQPJ04G2');
 </script><script>const GLOBAL_CONFIG = { 
   root: '/',
-  algolia: {"appId":"DH27CHWNQP","apiKey":"3e4083703bd703abf0fc10f3c31a33af","indexName":"myblog","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  algolia: {"appId":"DH27CHWNQP","apiKey":"3e4083703bd703abf0fc10f3c31a33af","indexName":"jgckm","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
   localSearch: undefined,
   translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
   noticeOutdate: undefined,
@@ -54,7 +54,7 @@ gtag('config', 'G-9EGQPJ04G2');
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2022-12-31 22:20:20'
+  postUpdate: '2023-01-02 19:33:15'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -125,26 +125,11 @@ gtag('config', 'G-9EGQPJ04G2');
       }
       const t = saveToLocal.get('theme')
     
-          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-          if (t === undefined) {
-            if (isLightMode) activateLightMode()
-            else if (isDarkMode) activateDarkMode()
-            else if (isNotSpecified || hasNoSupport) {
-              const now = new Date()
-              const hour = now.getHours()
-              const isNight = hour <= 6 || hour >= 18
-              isNight ? activateDarkMode() : activateLightMode()
-            }
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-              if (saveToLocal.get('theme') === undefined) {
-                e.matches ? activateDarkMode() : activateLightMode()
-              }
-            })
-          } else if (t === 'light') activateLightMode()
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
           else activateDarkMode()
         
       const asideStatus = saveToLocal.get('aside-status')
@@ -162,158 +147,8 @@ gtag('config', 'G-9EGQPJ04G2');
       }
     }
     detectApple()
-    })(window)</script><meta name="msvalidate.01" content="06A1E1CFFF6C11D2F1D98B031F22B5E8" /><meta name="google-site-verification" content="1iYmcXzqnICMn2Oe9DPKAXXWwBTtaf189U_d0_HkaI0" /><meta name="baidu-site-verification" content="code-mbKucxQrcS" /><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="jgckM" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/51497452?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fab fa-bandcamp"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messages/"><i class="fa-fw fas fa-message"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">jgckM</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fab fa-bandcamp"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messages/"><i class="fa-fw fas fa-message"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/posts/b1d1e418.html" title="vim的基本使用"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/202208170847517.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vim的基本使用"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/b1d1e418.html" title="vim的基本使用">vim的基本使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-16T02:41:42.000Z" title="发表于 2022-08-16 10:41:42">2022-08-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Linux/vim/">vim</a></span></div><div class="content">Vim编辑器
-vim 是 linux 系统中自带的编辑器，被称为**编辑器之神** 它的前身是 vi ，历史悠久，熟练的使用vim 有非常非常高效的效率
-
-Vim 有三种模式
-
-一般模式
-编辑模式(插入模式)
-命令模式
-
-一般模式
- 用vim直接打开文件，就会自动进入一般模式(默认模式)
-
-常用指令复制
-
-
-语法
-功能描述
-
-
-
-yy
-复制当前行
-
-
-数字yy
-复制一段(从光标当前行向后n行)
-
-
-y$
-从当前光标位置复制到行的最后
-
-
-y^
-从当前光标位置复制到行的最前面
-
-
-yw
-复制当前单词
-
-
-p
-粘贴
-
-
-删除
-
-
-语法
-功能描述
-
-
-
-dd
-删除行
-
-
-数字dd
-删除n行(向后删除)
-
-
-d^
-删除从当前光标位置到行头
-
-
-d$
-删除从当前光标位置到行尾
-
-
-dw
-删除当前单词
-
-
-剪切
-
-
-语法
-功能描述
-
-
-
-x
-剪切当前光标位置的(单个字符)
-
-
-X
-剪切光标之前的(单个字符)
-
-
-替换
-
-
-语法
-功能描述
-
-
-
-r
-替换当前光标的字符
-
-
-其他
-
-
-语法
-功能描述
-
-
-
-w
-移动到下一个词(单词开头)
-
-
-e
-移动到词尾
-
-
-gg
-光标移动到整片文档的开头
-
-
-数字 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/5e37b811.html" title="Typora配置图片自动上传到图床"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/202208151720690.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Typora配置图片自动上传到图床"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/5e37b811.html" title="Typora配置图片自动上传到图床">Typora配置图片自动上传到图床</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-15T03:13:54.000Z" title="发表于 2022-08-15 11:13:54">2022-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a></span></div><div class="content">✨前言
-因为写博客的时候图片需要手动的插入，实在是麻烦，这种繁琐重复的事，很是让人烦。所以就打算作个图床，一开始用gitee对国内友好点，可是他好像不是为人民服务的那种，各种的反链，恶心。最终选择用github+jsdelivr 搭建
-
-🥟使用的工具
-PicGo 是一款优秀的图床上传工具 可以快速上传图片到图床的工具
-
-Typora markdown编辑器
-
-github 用于存储图片
-
-github-plus PicGo 里面的插件 可以删除图片和同步仓库，而自带的版本不能删除
-
-
-
-这边使用PicGo+github来实现markdown图床
-
-🍭下载进入PicGo 的github下载页面
-
-这里根据自己系统选择，我是win版。下载后无脑安装
-成功安装界面
-
-🍿创建github仓库然后初始化仓库（省略）
-🌭配置PicGo在PicGo找到 图床设置 找到 github图床
-token创建
-点击setting
-
-进入设置界面看做下脚
-
-下面就是点击Personal access tokens &#x3D;&gt; Generate new token 生成token并且复制
-
-基 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/9bbb7be6.html" title="centos7安装"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/202208180938073.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="centos7安装"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/9bbb7be6.html" title="centos7安装">centos7安装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-15T00:29:12.000Z" title="发表于 2022-08-15 08:29:12">2022-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">✨CentOS 7 安装
+    })(window)</script><meta name="msvalidate.01" content="06A1E1CFFF6C11D2F1D98B031F22B5E8" /><meta name="google-site-verification" content="1iYmcXzqnICMn2Oe9DPKAXXWwBTtaf189U_d0_HkaI0" /><meta name="baidu-site-verification" content="code-mbKucxQrcS" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgckm/jgckm.github.io@master/assets/style.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="jgckM" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/51497452?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fab fa-bandcamp"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messages/"><i class="fa-fw fas fa-message"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">jgckM</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fab fa-bandcamp"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messages/"><i class="fa-fw fas fa-message"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/posts/b1d1e418.html" title="vim的基本使用"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/202208170847517.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vim的基本使用"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/b1d1e418.html" title="vim的基本使用">vim的基本使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-16T02:41:42.000Z" title="发表于 2022-08-16 10:41:42">2022-08-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Linux/vim/">vim</a></span></div><div class="content">强大的vim编辑器入门</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/5e37b811.html" title="Typora配置图片自动上传到图床"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/202208151720690.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Typora配置图片自动上传到图床"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/5e37b811.html" title="Typora配置图片自动上传到图床">Typora配置图片自动上传到图床</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-15T03:13:54.000Z" title="发表于 2022-08-15 11:13:54">2022-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a></span></div><div class="content">写博客必备的图床，自己手动搭建一个github+jsdelivr</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/9bbb7be6.html" title="centos7安装"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/202208180938073.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="centos7安装"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/9bbb7be6.html" title="centos7安装">centos7安装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-15T00:29:12.000Z" title="发表于 2022-08-15 08:29:12">2022-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">✨CentOS 7 安装
 安装 centos7 为学习 Linux 系统 打下基础
 
 ⚙下载 地址 CentOs7🎨安装配置好虚拟机之后就可以启动虚拟机进行安装了
@@ -371,52 +206,7 @@ xfs是新型的默认即可
 设置密码
 
 等待安装完成 重启即可
-重启后要接收 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/d7556a16.html" title="使用部署Valine-Admin失败"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/08/15/vaNgAO.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用部署Valine-Admin失败"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/d7556a16.html" title="使用部署Valine-Admin失败">使用部署Valine-Admin失败</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-14T12:07:26.000Z" title="发表于 2022-08-14 20:07:26">2022-08-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span></div><div class="content">前言
-最近在对接博客评论系统中，遇到了一个小问题，上网搜索没有相关的教程。于是就想着自己记录一下，防止哪天自己又忘记了
-
-博客使用的是 Valine 评论系统，优点事省事、简洁、免费。
-🙃遇到问题在部署的时候出现出错误
-
-部署用的是Valine-Admin仓库，后来在 issues 找到了，出现问题的原因
-是因为 Valine-Admin 不再支持 nodejs 11.x 版本的，直接 使用 nodejs 12.x 就可以。这里附上地址解决方案地址
-🎉解决方案
-fork 仓库
-
-修改 package.json 这个文件 将 node 从 11.x 改为 12.x 
-123&quot;engines&quot;: &#123;  &quot;node&quot;: &quot;12.x&quot;&#125;
-
-
-
-附上地址 package 
-
-提价更改
-
-在部署的时候直接使用 自己fork 的仓库仓库地址
-
-
-此时已经成功部署，问题解决
-
-
-🎨博客评论介绍直接在 昵称 填写 QQ 可以自动获取 QQ昵称 和 QQ邮箱 省去很多时间来填写
-为啥要填写邮箱填写邮箱后方便通知你，比如别 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/793072b5.html" title="自动备份博客"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/08/13/vtrAun.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自动备份博客"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/793072b5.html" title="自动备份博客">自动备份博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-13T06:45:08.000Z" title="发表于 2022-08-13 14:45:08">2022-08-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span></div><div class="content">hexo-auto-backuphexo自动备份脚本👏👏
-🤜 提前的操作
-在自己的博客根目录下确保已经初始化并连接仓库
-
-👉 使用
-这里以 butterfly 主题为例，请根据自己的主题实际操作
-
-
-删除 &#x2F;theme&#x2F;butterfly 目录下的 .git 文件夹
-取消跟踪 在博客根目录下执行1git rm --cached /theme/butterfly
-新建分支 并上传12345git checkout -b hexogit add .git commit -m &quot;hexo backup&quot;
-将 hexo 设置为主分支(🦴这里说的不是很详细，出现问题请自行解决🦴)
-
-
-在博客的 github仓库 Settings -&gt; Branches -&gt; Default branch -&gt; 选择 hexo
-
-
-在博客根目录 安装1npm i shelljs -d
-在博客根目录下安装 此脚本1git clone -b scripts git@github.com:jgckM/hexo-auto-backup.git scri ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/51497452?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jgckM</div><div class="author-info__description">jgckM的小窝，学习笔记，个人分享  分享知识、勤做笔记 JavaScript Vue Webpack nodejs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jgckM"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jgckM" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS链接"><i class="fa fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/d5217737.html" title="初识JAVA"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/image/202212232011946.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初识JAVA"/></a><div class="content"><a class="title" href="/posts/d5217737.html" title="初识JAVA">初识JAVA</a><time datetime="2022-12-22T14:10:05.000Z" title="发表于 2022-12-22 22:10:05">2022-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/bbee8447.html" title="VS中设置#define _CRT_SECURE_NO_WARNINGS的两种方式"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/202212291346533.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VS中设置#define _CRT_SECURE_NO_WARNINGS的两种方式"/></a><div class="content"><a class="title" href="/posts/bbee8447.html" title="VS中设置#define _CRT_SECURE_NO_WARNINGS的两种方式">VS中设置#define _CRT_SECURE_NO_WARNINGS的两种方式</a><time datetime="2022-12-18T12:17:29.000Z" title="发表于 2022-12-18 20:17:29">2022-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/35927ff5.html" title="使用Notepad++替换Windows记事本"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/image/202212181107365.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用Notepad++替换Windows记事本"/></a><div class="content"><a class="title" href="/posts/35927ff5.html" title="使用Notepad++替换Windows记事本">使用Notepad++替换Windows记事本</a><time datetime="2022-12-18T03:05:20.000Z" title="发表于 2022-12-18 11:05:20">2022-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/23840d68.html" title="vue打包后引入js和css用相对路径引入"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/202208301502698.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue打包后引入js和css用相对路径引入"/></a><div class="content"><a class="title" href="/posts/23840d68.html" title="vue打包后引入js和css用相对路径引入">vue打包后引入js和css用相对路径引入</a><time datetime="2022-08-30T07:00:05.000Z" title="发表于 2022-08-30 15:00:05">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/16d516d8.html" title="shell入门"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/3f878fc75ad84405bffa29a309238655.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="shell入门"/></a><div class="content"><a class="title" href="/posts/16d516d8.html" title="shell入门">shell入门</a><time datetime="2022-08-22T06:19:43.000Z" title="发表于 2022-08-22 14:19:43">2022-08-22</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CSS/" style="font-size: 1.15em; color: rgb(15, 185, 16)">CSS</a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(167, 79, 192)">HTML</a><a href="/tags/JavaScript/" style="font-size: 1.3em; color: rgb(82, 176, 97)">JavaScript</a><a href="/tags/Linux/" style="font-size: 1.45em; color: rgb(175, 172, 174)">Linux</a><a href="/tags/Shell/" style="font-size: 1.38em; color: rgb(147, 22, 132)">Shell</a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.3em; color: rgb(181, 36, 95)">博客</a><a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 1.15em; color: rgb(186, 78, 164)">图床</a><a href="/tags/C/" style="font-size: 1.15em; color: rgb(75, 111, 76)">C</a><a href="/tags/CentOS/" style="font-size: 1.22em; color: rgb(156, 40, 107)">CentOS</a><a href="/tags/JAVA/" style="font-size: 1.15em; color: rgb(61, 108, 48)">JAVA</a><a href="/tags/vim/" style="font-size: 1.15em; color: rgb(192, 189, 67)">vim</a><a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 1.15em; color: rgb(21, 157, 9)">备份</a><a href="/tags/vue/" style="font-size: 1.15em; color: rgb(126, 40, 56)">vue</a><a href="/tags/Github/" style="font-size: 1.15em; color: rgb(118, 65, 91)">Github</a><a href="/tags/Windows/" style="font-size: 1.15em; color: rgb(3, 45, 42)">Windows</a><a href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" style="font-size: 1.15em; color: rgb(163, 144, 13)">记事本</a><a href="/tags/nodejs/" style="font-size: 1.15em; color: rgb(55, 3, 39)">nodejs</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">12</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-08-12T13:35:28.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">13.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-12-31T14:20:19.247Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By jgckM</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="https://cdn.jsdelivr.net/gh/CCKNBC/ccknbc.github.io/js/search/algolia.js"></script><div class="js-pjax"></div><script>window.addEventListener('load', () => {
+重启后要接收 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/d7556a16.html" title="使用部署Valine-Admin失败"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/08/15/vaNgAO.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用部署Valine-Admin失败"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/d7556a16.html" title="使用部署Valine-Admin失败">使用部署Valine-Admin失败</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-14T12:07:26.000Z" title="发表于 2022-08-14 20:07:26">2022-08-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span></div><div class="content">Valine-Admin部署报错</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/793072b5.html" title="自动备份博客"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/08/13/vtrAun.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自动备份博客"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/793072b5.html" title="自动备份博客">自动备份博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-13T06:45:08.000Z" title="发表于 2022-08-13 14:45:08">2022-08-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span></div><div class="content">自动备份博客</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/51497452?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jgckM</div><div class="author-info__description">jgckM的小窝，学习笔记，个人分享  分享知识、勤做笔记 JavaScript Vue Webpack nodejs</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jgckM"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jgckM" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS链接"><i class="fa fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/d5217737.html" title="初识JAVA"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/image/202212232011946.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初识JAVA"/></a><div class="content"><a class="title" href="/posts/d5217737.html" title="初识JAVA">初识JAVA</a><time datetime="2022-12-22T14:10:05.000Z" title="发表于 2022-12-22 22:10:05">2022-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/bbee8447.html" title="VS中设置#define _CRT_SECURE_NO_WARNINGS的两种方式"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/202212291346533.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VS中设置#define _CRT_SECURE_NO_WARNINGS的两种方式"/></a><div class="content"><a class="title" href="/posts/bbee8447.html" title="VS中设置#define _CRT_SECURE_NO_WARNINGS的两种方式">VS中设置#define _CRT_SECURE_NO_WARNINGS的两种方式</a><time datetime="2022-12-18T12:17:29.000Z" title="发表于 2022-12-18 20:17:29">2022-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/35927ff5.html" title="使用Notepad++替换Windows记事本"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/image/202212181107365.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用Notepad++替换Windows记事本"/></a><div class="content"><a class="title" href="/posts/35927ff5.html" title="使用Notepad++替换Windows记事本">使用Notepad++替换Windows记事本</a><time datetime="2022-12-18T03:05:20.000Z" title="发表于 2022-12-18 11:05:20">2022-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/23840d68.html" title="vue打包后引入js和css用相对路径引入"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/202208301502698.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue打包后引入js和css用相对路径引入"/></a><div class="content"><a class="title" href="/posts/23840d68.html" title="vue打包后引入js和css用相对路径引入">vue打包后引入js和css用相对路径引入</a><time datetime="2022-08-30T07:00:05.000Z" title="发表于 2022-08-30 15:00:05">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/16d516d8.html" title="shell入门"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/jgckM/image@main/cover/3f878fc75ad84405bffa29a309238655.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="shell入门"/></a><div class="content"><a class="title" href="/posts/16d516d8.html" title="shell入门">shell入门</a><time datetime="2022-08-22T06:19:43.000Z" title="发表于 2022-08-22 14:19:43">2022-08-22</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CSS/" style="font-size: 1.15em; color: rgb(76, 150, 65)">CSS</a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(129, 132, 56)">HTML</a><a href="/tags/JavaScript/" style="font-size: 1.3em; color: rgb(130, 70, 64)">JavaScript</a><a href="/tags/Linux/" style="font-size: 1.45em; color: rgb(5, 152, 16)">Linux</a><a href="/tags/Shell/" style="font-size: 1.38em; color: rgb(158, 42, 53)">Shell</a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.3em; color: rgb(196, 8, 11)">博客</a><a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 1.15em; color: rgb(77, 36, 7)">图床</a><a href="/tags/C/" style="font-size: 1.15em; color: rgb(144, 64, 195)">C</a><a href="/tags/CentOS/" style="font-size: 1.22em; color: rgb(24, 131, 34)">CentOS</a><a href="/tags/vim/" style="font-size: 1.15em; color: rgb(124, 28, 4)">vim</a><a href="/tags/vue/" style="font-size: 1.15em; color: rgb(197, 80, 143)">vue</a><a href="/tags/Github/" style="font-size: 1.15em; color: rgb(82, 40, 13)">Github</a><a href="/tags/Windows/" style="font-size: 1.15em; color: rgb(12, 151, 157)">Windows</a><a href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" style="font-size: 1.15em; color: rgb(177, 157, 50)">记事本</a><a href="/tags/nodejs/" style="font-size: 1.15em; color: rgb(36, 21, 125)">nodejs</a><a href="/tags/JAVA/" style="font-size: 1.15em; color: rgb(85, 57, 141)">JAVA</a><a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 1.15em; color: rgb(171, 142, 28)">备份</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">12</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-08-12T13:35:28.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">13.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-01-02T11:33:13.805Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By jgckM</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"></div><script>window.addEventListener('load', () => {
   const changeContent = (content) => {
     if (content === '') return content
 

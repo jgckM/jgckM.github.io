@@ -83,7 +83,8 @@ window.addEventListener('load', () => {
     showReset: false,
     showSubmit: false,
     placeholder: GLOBAL_CONFIG.algolia.languages.input_placeholder,
-    showLoadingIndicator: true
+    showLoadingIndicator: true,
+	searchOnEnterKeyPressOnly: true,// �س�����,�����˷���������
   })
 
   const hits = instantsearch.widgets.hits({
